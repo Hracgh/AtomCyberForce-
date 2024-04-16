@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Team ID Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ccccff; 
+      color: #000000; /* Text color */
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 20px;
+      position: relative;
+    }
+    
+    .card {
+      background-color: #c8a2c8; /* Card background color */
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    
+    .card h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    
+    .card p {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .up-button,
+    .down-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      color: #fff;
+      background-color: #000000;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .up-button:hover,
+    .down-button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <img src="example.jpg" alt="Profile Picture">
+    <h2><b>Name:</b> EBEE-BHAI</h2>
+    <p><b>Post:</b> Owner Of AtomCyberForce</p>
+    <p><b>Age:</b> 16</p>
+    <p><b>Skill:</b> Ethical Hacking, Digital Marketing, Leading</p>
+    <p><b>Languages:</b> HTML,CSS,JAVA,PYTHON</P>
+    <p><b>Experience:</b> 4.5 Years</p>
+    <p><b>Nationality:</b> Pakistani</p>
+    <p><b>Contact Number:</b> +1 775 495 0903</p>
+  </div>
+  <div class="card">
+    <img src="dollar.jpg" alt="Profile Picture">
+    <h2><b>Name:</b> $.B173</h2>
+    <p><b>Post:</b> Community Managers,Editor</p>
+    <p><b>Age:</b> 21</p>
+    <p><b>Skill:</b> Video Editing,Communication</p>
+    <p><b>Experience:</b> 1 Years</p>
+    <p><b>Nationality:</b> Pakistani</p>
+    <p><b>Contact Number:</b> +48 699 532 182</p>
+  </div>
+  <div class="card">
+    <img src="dragon.jpeg" alt="Profile Picture">
+    <h2><b>Name:</b> BLACK DRAGON</h2>
+    <p><b>Post:</b> FaceBook/Instagram Manager</p>
+    <p><b>Age:</b> 27</p>
+    <p><b>Skill:</b> Social Media Marketing</p>
+    <p><b>Experience:</b> 2 Years</p>
+    <p><b>Nationality:</b> Pakistani</p>
+    <p><b>Contact Number:</b> +92 335 9230336</p>
+  </div>
+  <div class="card">
+    <img src="affi.jpeg" alt="Profile Picture">
+    <h2><b>Name:</b> AFFI BHAI</h2>
+    <p><b>Post:</b> Youtube Manager</p>
+    <p><b>Age:</b> 27</p>
+    <p><b>Skill:</b> Youtube Expert</p>
+    <p><b>Experience:</b> 3 Years</p>
+    <p><b>Nationality:</b> Pakistani</p>
+    <p><b>Contact Number:</b> +92 306 0003666</p>
+  </div>
+  <div class="card">
+    <img src="devil.jpeg" alt="Profile Picture">
+    <h2><b>Name:</b> WHITE DEVIL</h2>
+    <p><b>Post:</b> Projects Manager</p>
+    <p><b>Age:</b> 24</p>
+    <p><b>Skill:</b> Web Development</p>
+    <p><b>Experience:</b> 0.8  Years</p>
+    <p><b>Nationality:</b> Pakistani</p>
+    <p><b>Contact Number:</b> +92 304 2676163</p>
+  </div>
+  <!-- Repeat the card structure for each team member -->
+</div>
+
+<button class="up-button" onclick="scrollToPreviousCard()">&#8593;</button>
+<button class="down-button" onclick="scrollToNextCard()">&#8595;</button>
+
+<script>
+  function scrollToPreviousCard() {
+    const cards = document.querySelectorAll('.card');
+    const currentCardIndex = Array.from(cards).findIndex(card => card.getBoundingClientRect().top >= 0);
+    if (currentCardIndex > 0) {
+      cards[currentCardIndex - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  function scrollToNextCard() {
+    const cards = document.querySelectorAll('.card');
+    const currentCardIndex = Array.from(cards).findIndex(card => card.getBoundingClientRect().top >= 0);
+    if (currentCardIndex < cards.length - 1) {
+      cards[currentCardIndex + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+
+</body>
+</html>
